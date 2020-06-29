@@ -56,6 +56,11 @@ class AuthController extends Controller
         return $this->errorResponse('Unauthorized', 401);
     }
 
+    public function detail(){
+        $user = Auth::user();
+        return $this->successResponse($user,'Success',200);
+    }
+
     public function guard()
     {
         return Auth::guard();
